@@ -1,0 +1,46 @@
+package com.musicdatabase;
+
+//import org.apache.log4j.Logger;
+import java.io.FileNotFoundException;
+//import java.io.RandomAccessFile;
+import java.io.IOException;
+import java.io.FileInputStream;
+import java.io.InputStream;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileReader;
+import java.io.FileWriter;
+//import java.text.ParseException;
+//import java.text.SimpleDateFormat;
+import java.util.Collections;
+import java.util.Date;
+import jxl.Sheet;
+import jxl.Workbook;
+import jxl.read.biff.BiffException;
+import org.junit.Test;
+
+import com.google.protobuf.ByteString.Output;
+import com.musiclibs.MusicUtils;
+import com.musiclibs.MusicVars;
+
+public class ReadAllFilesAndDisplayData {
+
+	// DisplayStrings
+	Object dispArtist = "";
+	String whatAreWeDoing = "Basic Read and Display";
+	String dispYear = "";
+	String yearOnTrackToDisp, titleOnHeaderToDisp, labelToDisp, yearOnHeaderToDisp,artKeyToDisp;
+
+	Sheet sArts,sHeads,sLabs,sProds,sCat1,sCat2,sCat3,sArtGenre,sFileUnder,sLabgroup,sMedium,sType,sOvCat,sOwner;
+
+	int nDiffTracks,nDupTracks;
+	float perCentDups;
+
+	int iArtistT;
+	int j = 0;
+
+	// General fields
+	String xLineBreak1 = "\n";
+	String xLineBreak2 = "\n\n";
+	String xLineBreak3 = "\r\n";
+	String xx = "";
